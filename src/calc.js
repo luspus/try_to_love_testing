@@ -37,11 +37,29 @@ export function main2 (number): number {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 export function main3 (number): number {
-  console.log("Running tests 3...");
-  // Requirement 3
+  console.log("Running tests 3 case 4...");
+  // Requirement 2 step 4
   let result: number = stringCalculatorFor3(number);
   console.log(resultAsMessage(`Requirement 3 (${number})`, number, result));
   return result;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////
 
+
+function stringCalculatorForRequirement3(string): number {
+  if(string.includes('.')) {
+    const number = string.split('.');
+    return +number[0] + +number[1];
+  }
+  
+  return +string;
+}
+
+export function requirement3 (string, expected): number {
+  console.log("Running tests 3...");
+  // Requirement 3
+  let result: number = stringCalculatorForRequirement3(string);
+  console.log(resultAsMessage(`Requirement 3 (${expected})`, expected, result));
+  return result;
+}
