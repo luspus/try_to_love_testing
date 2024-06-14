@@ -63,3 +63,29 @@ export function requirement3 (string, expected): number {
   console.log(resultAsMessage(`Requirement 3 (${expected})`, expected, result));
   return result;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////
+
+function stringCalculatorForRequirement4(string): number {
+  if(string.includes('.')) {
+    const stringsInArray = string.split('.');
+    if(stringsInArray.length >= 3) {
+      let sum = 0;
+      stringsInArray.forEach((number): void => {
+        sum = +number + sum;
+      })
+      
+      return sum;
+    }
+  }
+  
+  return +string;
+}
+
+export function requirement4 (string, expected): number {
+  console.log("Running tests 4...");
+  // Requirement 4
+  let result: number = stringCalculatorForRequirement4(string);
+  console.log(resultAsMessage(`Requirement 4 (${expected})`, expected, result));
+  return result;
+}

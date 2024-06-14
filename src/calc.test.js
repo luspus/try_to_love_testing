@@ -1,4 +1,4 @@
-import { main1, main2, main3, requirement3 } from './calc';
+import { main1, main2, main3, requirement3, requirement4 } from './calc';
 // Requirement 1
 test('If the input string is empty, the result should be 0', (): void => {
   expect(main1('', 0)).toBe(0);
@@ -24,4 +24,10 @@ test('Updated the implementation to make tests pas.', (): void => {
 test('If the input string has two numbers separated by a comma, the result should be the sum of these two numbers.', (): void => {
   expect(requirement3('1.2', 3)).toBe(3);
   expect(requirement3('15.22', 37)).toBe(37);
+})
+
+
+// Requirement 4
+test('Add support for the input of an unknown amount of numbers joined by a comma (e.g. three or more numbers).', (): void => {
+  expect(requirement4('1.2.3.4', 10)).toBe(10);
 })
