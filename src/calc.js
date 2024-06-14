@@ -5,6 +5,10 @@ function stringCalculator(numbers):number {
   return -1;
 }
 
+function stringCalculatorFor3(numbers): number {
+  return parseInt(numbers);
+}
+
 function resultAsMessage(testCaseName, number, actual): string {
   const expected: string  =  number === '' ? 'empty' : number;
   return number === actual
@@ -12,7 +16,7 @@ function resultAsMessage(testCaseName, number, actual): string {
     : `${testCaseName}: FAIL (expected ${expected}, actual ${actual})`;
 }
 
-function main1(number, expected):number {
+export function main1(number, expected):number {
   console.log("Running tests 1...");
 
   // Requirement 1
@@ -21,7 +25,7 @@ function main1(number, expected):number {
   return result;
 }
 
-function main2 (number): number {
+export function main2 (number): number {
   console.log("Running tests 2...");
   // Requirement 2
   let result: number = stringCalculator(number);
@@ -30,5 +34,14 @@ function main2 (number): number {
 }
 
 
-module.exports = main1;
-module.exports = main2;
+////////////////////////////////////////////////////////////////////////////////////////
+
+export function main3 (number): number {
+  console.log("Running tests 3...");
+  // Requirement 3
+  let result: number = stringCalculatorFor3(number);
+  console.log(resultAsMessage(`Requirement 3 (${number})`, number, result));
+  return result;
+}
+
+
