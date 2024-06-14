@@ -11,9 +11,13 @@ test('If string has a single number, the result should be the value of that numb
   expect(main2(1)).toBe(-1);
 });
 
-// Requirement 3
+
+//Step 4 of Requirement 2
 test('Updated the implementation to make tests pas.', (): void => {
   expect(main3('')).toBe(NaN);
   expect(main3(321)).toBe(321);
   expect(main3(1)).toBe(1);
 });
+
+
+// Requirement 3
