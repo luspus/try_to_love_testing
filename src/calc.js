@@ -20,7 +20,7 @@ export function main1(number, expected):number {
   console.log("Running tests 1...");
 
   // Requirement 1
-  let result: number = stringCalculator(number);
+  const result: number = stringCalculator(number);
   resultAsMessage("Requirement 1", expected, result);
   return result;
 }
@@ -28,7 +28,7 @@ export function main1(number, expected):number {
 export function main2 (number): number {
   console.log("Running tests 2...");
   // Requirement 2
-  let result: number = stringCalculator(number);
+  const result: number = stringCalculator(number);
   console.log(resultAsMessage(`Requirement 2 (${number})`, number, result));
   return result;
 }
@@ -39,7 +39,7 @@ export function main2 (number): number {
 export function main3 (number): number {
   console.log("Running tests 3 case 4...");
   // Requirement 2 step 4
-  let result: number = stringCalculatorFor3(number);
+  const result: number = stringCalculatorFor3(number);
   console.log(resultAsMessage(`Requirement 3 (${number})`, number, result));
   return result;
 }
@@ -59,7 +59,7 @@ function stringCalculatorForRequirement3(string): number {
 export function requirement3 (string, expected): number {
   console.log("Running tests 3...");
   // Requirement 3
-  let result: number = stringCalculatorForRequirement3(string);
+  const result: number = stringCalculatorForRequirement3(string);
   console.log(resultAsMessage(`Requirement 3 (${expected})`, expected, result));
   return result;
 }
@@ -85,7 +85,7 @@ function stringCalculatorForRequirement4(string): number {
 export function requirement4 (string, expected): number {
   console.log("Running tests 4...");
   // Requirement 4
-  let result: number = stringCalculatorForRequirement4(string);
+  const result: number = stringCalculatorForRequirement4(string);
   console.log(resultAsMessage(`Requirement 4 (${expected})`, expected, result));
   return result;
 }
@@ -112,7 +112,7 @@ function stringCalculatorForRequirement5 (string): number {
 export function requirement5 (string, expected): number {
   console.log("Running tests 5...");
   // Requirement 5
-  let result: number = stringCalculatorForRequirement5(string);
+  const result: number = stringCalculatorForRequirement5(string);
   console.log(resultAsMessage(`Requirement 5 (${expected})`, expected, result));
   return result;
 }
