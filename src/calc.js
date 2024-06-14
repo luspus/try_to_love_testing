@@ -89,3 +89,30 @@ export function requirement4 (string, expected): number {
   console.log(resultAsMessage(`Requirement 4 (${expected})`, expected, result));
   return result;
 }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+function stringCalculatorForRequirement5 (string): number {
+  if(string.includes('.')) {
+    const regex = /[^0-9\.,]/;
+    const stringsOnlyWithReplacedSymbols = string.replace(regex, '.');
+    const stringsInArray = stringsOnlyWithReplacedSymbols.split('.');
+    let sum = 0;
+    stringsInArray.forEach((number): void => {
+      sum = +number + sum;
+    })
+    
+    return sum;
+  }
+  
+  return +string;
+}
+
+export function requirement5 (string, expected): number {
+  console.log("Running tests 5...");
+  // Requirement 5
+  let result: number = stringCalculatorForRequirement5(string);
+  console.log(resultAsMessage(`Requirement 5 (${expected})`, expected, result));
+  return result;
+}
