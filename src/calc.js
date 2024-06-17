@@ -3,7 +3,9 @@ class StringCalculator {
     if (numbers) {
       
       if (numbers.includes('.')) {
-        const splitedNumbers = numbers.split('.');
+        const regex = /[^0-9\.,]/;
+        const replacedSymbols = numbers.replace(regex, '.')
+        const splitedNumbers = replacedSymbols.split('.');
         let sum = 0;
         if (splitedNumbers.length === 2) {
           sum = +splitedNumbers[0] + +splitedNumbers[1];
@@ -49,6 +51,9 @@ class StringCalculatorTest {
      
      //Requirement 4
      console.log(StringCalculatorTest.resultAsMessage("Requirement 4", 69, result));
+     
+     //Requirement 5
+     console.log(StringCalculatorTest.resultAsMessage("Requirement 5", 6, result));
      
      return result;
   }

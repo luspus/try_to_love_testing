@@ -15,7 +15,7 @@ test('If string has a single number, the result should be the value of that numb
 });
 
 // Requirement 3
-test('If the input string has two numbers separated by a comma, the result should be the sum of these two numbers.', (): void => {
+test('f the input string has two numbers separated by a comma, the result should be the sum of these two numbers', (): void => {
   const result1: StringCalculatorTest = new StringCalculatorTest('1.2');
   const result2: StringCalculatorTest = new StringCalculatorTest('15.22');
   
@@ -24,8 +24,15 @@ test('If the input string has two numbers separated by a comma, the result shoul
 })
 
 // Requirement 4
-test('If the input string has two numbers separated by a comma, the result should be the sum of these two numbers.', (): void => {
+test('Add support for the input of an unknown amount of numbers joined by a comma (e.g. three or more numbers)', (): void => {
   const result1: StringCalculatorTest = new StringCalculatorTest('1.2.66');
   
   expect(result1.main()).toBe(69);
+})
+
+// Requirement 5
+test('Allow the add method to handle new lines between numbers (instead of commas).', (): void => {
+  const result1: StringCalculatorTest = new StringCalculatorTest('1\n2.3');
+  
+  expect(result1.main()).toBe(6);
 })
