@@ -22,3 +22,10 @@ test('If the input string has two numbers separated by a comma, the result shoul
   expect(result1.main()).toBe(3);
   expect(result2.main()).toBe(37);
 })
+
+// Requirement 4
+test('If the input string has two numbers separated by a comma, the result should be the sum of these two numbers.', (): void => {
+  const result1: StringCalculatorTest = new StringCalculatorTest('1.2.66');
+  
+  expect(result1.main()).toBe(69);
+})

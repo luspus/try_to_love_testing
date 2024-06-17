@@ -4,8 +4,16 @@ class StringCalculator {
       
       if (numbers.includes('.')) {
         const splitedNumbers = numbers.split('.');
-        return +splitedNumbers[0] + +splitedNumbers[1];
-      
+        let sum = 0;
+        if (splitedNumbers.length === 2) {
+          sum = +splitedNumbers[0] + +splitedNumbers[1];
+        } else {
+          splitedNumbers.forEach((number): void => {
+            sum = +number + +sum;
+          })
+        }
+    
+        return sum;
       }
       
       return parseInt(numbers);
@@ -38,6 +46,9 @@ class StringCalculatorTest {
      //Requirement 3
      console.log(StringCalculatorTest.resultAsMessage("Requirement 3", 3, result));
      console.log(StringCalculatorTest.resultAsMessage("Requirement 3", 37, result));
+     
+     //Requirement 4
+     console.log(StringCalculatorTest.resultAsMessage("Requirement 4", 69, result));
      
      return result;
   }
