@@ -1,13 +1,15 @@
 class StringCalculator {
   static add(numbers): string {
-    if (numbers.length === 0) {
+    if (numbers) {
+      return parseInt(numbers);
+    } else {
       return 0;
     }
   }
 }
 
 class StringCalculatorTest {
-  constructor(args: any) {
+  constructor(args: string) {
     this.stringToCheck = args;
   }
 
@@ -22,8 +24,11 @@ class StringCalculatorTest {
      // Requirement 1
      result = StringCalculator.add(this.stringToCheck);
      console.log(StringCalculatorTest.resultAsMessage("Requirement 1", 0, result));
+     //Requirement 2
+     console.log(StringCalculatorTest.resultAsMessage("Requirement 2", 1, result));
+     console.log(StringCalculatorTest.resultAsMessage("Requirement 2", 321, result));
      
-    return result;
+     return result;
   }
 }
 
