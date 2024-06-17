@@ -1,6 +1,13 @@
 class StringCalculator {
   static add(numbers): string {
     if (numbers) {
+      
+      if (numbers.includes('.')) {
+        const splitedNumbers = numbers.split('.');
+        return +splitedNumbers[0] + +splitedNumbers[1];
+      
+      }
+      
       return parseInt(numbers);
     } else {
       return 0;
@@ -28,9 +35,15 @@ class StringCalculatorTest {
      console.log(StringCalculatorTest.resultAsMessage("Requirement 2", 1, result));
      console.log(StringCalculatorTest.resultAsMessage("Requirement 2", 321, result));
      
+     //Requirement 3
+     console.log(StringCalculatorTest.resultAsMessage("Requirement 3", 3, result));
+     console.log(StringCalculatorTest.resultAsMessage("Requirement 3", 37, result));
+     
      return result;
   }
 }
+
+
 
 
 export default StringCalculatorTest;

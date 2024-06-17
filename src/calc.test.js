@@ -13,3 +13,12 @@ test('If string has a single number, the result should be the value of that numb
   expect(result1.main()).toBe(1);
   expect(result2.main()).toBe(321);
 });
+
+// Requirement 3
+test('If the input string has two numbers separated by a comma, the result should be the sum of these two numbers.', (): void => {
+  const result1: StringCalculatorTest = new StringCalculatorTest('1.2');
+  const result2: StringCalculatorTest = new StringCalculatorTest('15.22');
+  
+  expect(result1.main()).toBe(3);
+  expect(result2.main()).toBe(37);
+})
