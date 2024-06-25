@@ -1,11 +1,16 @@
 class StringCalculator {
-  static add(numbers): string {
-    if (numbers) {
-      
-      if (numbers.includes('.')) {
-        const regex = /[^0-9\.,]/;
-        const replacedSymbols = numbers.replace(regex, '.')
-        const splitedNumbers = replacedSymbols.split('.');
+  static add(stringWithNumbers): string {
+    const newLine = '\n';
+    const hasNewLine = stringWithNumbers.includes(newLine);
+    let stringWithCommaOnly = stringWithNumbers;
+    
+    if (hasNewLine) {
+      stringWithCommaOnly = stringWithNumbers.replace(newLine, '.');
+    }
+    
+    if (stringWithCommaOnly) {
+       if (stringWithCommaOnly.includes('.')) {
+        let splitedNumbers = stringWithCommaOnly.split('.');
         let sum = 0;
         if (splitedNumbers.length === 2) {
           sum = +splitedNumbers[0] + +splitedNumbers[1];
@@ -14,11 +19,10 @@ class StringCalculator {
             sum = +number + +sum;
           })
         }
-    
         return sum;
       }
       
-      return parseInt(numbers);
+      return parseInt(stringWithCommaOnly);
     } else {
       return 0;
     }
